@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getTodoData } from "../actions";
+import "./TodoStyling.css";
 
 class Todos extends Component {
   render() {
@@ -8,7 +9,9 @@ class Todos extends Component {
     return (
       <div>
         {this.props.todos.map(todo => (
-          <div>{todo.task}</div>
+          <div className="todo-item">
+            <p>{todo.task}</p>
+          </div>
         ))}
       </div>
     );

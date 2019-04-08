@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import Todos from "./components/Todos";
 import TodoForm from "./components/TodoForm";
 import todos from "./reducers";
+import "./App.css";
 
 const middleware = [thunk];
 
@@ -26,10 +27,12 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
-          <Todos />
-          <hr />
-          <TodoForm />
+        <div className="main-container">
+          <div className="App">
+            <h1>Todo List</h1>
+            <Todos />
+            <TodoForm />
+          </div>
         </div>
       </Provider>
     );

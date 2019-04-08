@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addTodoData } from "../actions";
+import "./TodoStyling.css";
 
 class TodoForm extends Component {
   constructor(props) {
@@ -32,14 +33,13 @@ class TodoForm extends Component {
   render() {
     return (
       <div>
-        <h1>Add Todo</h1>
+        <h3>Add Todo</h3>
         <form onSubmit={this.onSubmit}>
           <div>
-            <label>Title: </label>
-            <br />
             <input
               type="text"
               name="todo"
+              placeholder="What's next on the list?"
               onChange={this.onChange}
               value={this.state.todo}
             />
