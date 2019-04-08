@@ -4,6 +4,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import Todos from "./components/Todos";
+import TodoForm from "./components/TodoForm";
 import todos from "./reducers";
 
 const middleware = [thunk];
@@ -27,6 +28,8 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <Todos />
+          <hr />
+          <TodoForm />
         </div>
       </Provider>
     );

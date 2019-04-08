@@ -1,4 +1,4 @@
-import { GET_TODO_DATA } from "../actions";
+import { GET_TODO_DATA, ADD_TODO } from "../actions";
 
 const initialState = {
   todos: [
@@ -30,6 +30,12 @@ export default (state = initialState, action) => {
       return {
         ...state,
         todos: action.payload
+      };
+    case ADD_TODO:
+      // Fill in the body of this case
+      return {
+        ...state,
+        todos: [...state.todos, action.payload]
       };
     default:
       return state;
