@@ -1,3 +1,10 @@
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .todo-item {
   font-weight: bold;
   cursor: pointer;
@@ -41,5 +48,25 @@ button:hover {
 }
 
 .delete-icon.include {
-  display: block;
+  display: flex;
+  font-weight: bold;
+  color: red;
+  /* flex-direction: column; */
+  margin-left: 1rem;
+}
+
+.delete-icon.include:hover {
+  cursor: pointer;
+}
+
+.clear-all:hover {
+  background: red;
+  color: white;
+  font-weight: bold;
+}
+
+.submit:hover {
+  color: white;
+  font-weight: bold;
+  background: #088872;
 }

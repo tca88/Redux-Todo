@@ -55,31 +55,23 @@ class Todos extends Component {
                   {todo.task}
                 </p>
                 {todo.completed && (
-                  <button
+                  <div
                     className={`delete-icon${todo.completed ? " include" : ""}`}
                     onClick={e => {
                       this.deleteIndividualItem(e, todo);
                     }}
                   >
                     X
-                  </button>
-                )}
-                {todo.completed && (
-                  <button
-                    className={`delete-icon${todo.completed ? " include" : ""}`}
-                    onClick={e => {
-                      this.deleteIndividualItem(e, todo);
-                    }}
-                  >
-                    Edit
-                  </button>
+                  </div>
                 )}
               </div>
             );
           })}
         </div>
         <TodoForm />
-        <button onClick={this.deleteItem}>Clear All Completed</button>
+        <button className="clear-all" onClick={this.deleteItem}>
+          Clear All Completed
+        </button>
       </div>
     );
   }

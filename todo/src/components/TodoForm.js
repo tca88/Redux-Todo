@@ -37,7 +37,9 @@ class TodoForm extends Component {
               value={this.state.todo}
             />
           </div>
-          <button type="submit">Submit</button>
+          <button className="submit" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );
