@@ -35,7 +35,14 @@ export default (state = initialState, action) => {
       // Fill in the body of this case
       return {
         ...state,
-        todos: [...state.todos, action.payload]
+        todos: [
+          ...state.todos,
+          {
+            task: action.payload,
+            id: Date.now(),
+            completed: false
+          }
+        ]
       };
     default:
       return state;
