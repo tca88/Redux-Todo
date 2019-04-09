@@ -1,4 +1,10 @@
-import { GET_TODO_DATA, ADD_TODO } from "../actions";
+import {
+  GET_TODO_DATA,
+  ADD_TODO,
+  TOGGLE_TODO,
+  DELETE_TODO,
+  DELETE_INDIVIDUAL_TODO
+} from "../actions";
 
 const initialState = {
   todos: [
@@ -26,13 +32,11 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_TODO_DATA:
-      // Fill in the body of this case
       return {
         ...state,
         todos: action.payload
       };
     case ADD_TODO:
-      // Fill in the body of this case
       return {
         ...state,
         todos: [
@@ -43,6 +47,37 @@ export default (state = initialState, action) => {
             completed: false
           }
         ]
+      };
+    case TOGGLE_TODO:
+      return {
+        ...state,
+        todos: state.todos.map(todoItem => {
+          if (todoItem === action.payload) {
+            return {
+              ...action.payload,
+              completed: !todoItem.completed
+            };
+          }
+          return todoItem;
+        })
+      };
+    case DELETE_TODO:
+      return {
+        ...state,
+        todos: state.todos.filter(todoItem => todoItem.completed === false)
+      };
+    case DELETE_INDIVIDUAL_TODO:
+      return {
+        ...state,
+        todos: state.todos.map(todoItem => {
+          if (action.payload.id === todoItem.id) {
+            return {
+              ...action.payload,
+              task: ""
+            };
+          }
+          return todoItem;
+        })
       };
     default:
       return state;

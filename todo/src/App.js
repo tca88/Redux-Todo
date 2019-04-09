@@ -4,7 +4,6 @@ import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import Todos from "./components/Todos";
-import TodoForm from "./components/TodoForm";
 import todos from "./reducers";
 import "./App.css";
 
@@ -31,7 +30,6 @@ class App extends Component {
           <div className="App">
             <h1>Todo List</h1>
             <Todos />
-            <TodoForm />
           </div>
         </div>
       </Provider>
