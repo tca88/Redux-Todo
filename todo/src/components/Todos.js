@@ -28,10 +28,6 @@ class Todos extends Component {
     return this.props.deleteIndividualTodo(item);
   };
 
-  updateItem = (e, item) => {
-    return this.props.updateTodo(item);
-  };
-
   deleteItem = () => {
     return this.props.deleteTodo(this.state.todos);
   };
