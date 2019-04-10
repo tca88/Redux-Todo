@@ -1,0 +1,72 @@
+.todo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.todo-item {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.todo-item.completed {
+  text-decoration: line-through;
+}
+
+input {
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+button {
+  padding: 0.5rem;
+  font-size: 14px;
+  margin-top: 1rem;
+  border-radius: 5px;
+  background: white;
+}
+
+button:active {
+  outline: 0;
+}
+
+button:focus {
+  outline: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.delete-icon {
+  display: none;
+}
+
+.delete-icon.include {
+  display: flex;
+  font-weight: bold;
+  color: red;
+  /* flex-direction: column; */
+  margin-left: 1rem;
+}
+
+.delete-icon.include:hover {
+  cursor: pointer;
+}
+
+.clear-all:hover {
+  background: red;
+  color: white;
+  font-weight: bold;
+}
+
+.submit:hover {
+  color: white;
+  font-weight: bold;
+  background: #088872;
+}
